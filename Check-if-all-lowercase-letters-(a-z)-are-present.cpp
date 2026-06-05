@@ -1,19 +1,19 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+#define ll long long int
 int main() {
     string s;
     cin >> s;
 
-    long long mask = 0;
+    ll m = 0;
 
     for(char ch : s) {
         if(ch >= 'a' && ch <= 'z')
-            mask |= (1LL << (ch - 'a'));
+            m |= (1LL << (ch - 'a'));
     }
 
-    if(mask == (1LL << 26) - 1)
+    if(m == (1LL << 26) - 1)
         cout << "Yes";
     else
         cout << "No";

@@ -1,25 +1,25 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+#define ll unsigned long long int
 int main() {
     string s;
     cin >> s;
 
-    unsigned long long lowerMask = 0;
-    unsigned long long upperMask = 0;
+    ll lm = 0;
+    ll um = 0;
 
     for(char ch : s) {
         if(ch >= 'a' && ch <= 'z')
-            lowerMask |= (1ULL << (ch - 'a'));
+            lm |= (1 << (ch - 'a'));
 
         else if(ch >= 'A' && ch <= 'Z')
-            upperMask |= (1ULL << (ch - 'A'));
+            um |= (1 << (ch - 'A'));
     }
 
-    unsigned long long full = (1ULL << 26) - 1;
+    ll full = (1 << 26) - 1;
 
-    if(lowerMask == full && upperMask == full)
+    if(lm == full && um == full)
         cout << "Yes";
     else
         cout << "No";
